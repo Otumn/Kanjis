@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://o51yaduulvan"]
+
+[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/base_menu.tscn" id="1_ou5ra"]
+
+[node name="SettingsMenu" unique_id=1009726842 instance=ExtResource("1_ou5ra")]
+title = "Settings"

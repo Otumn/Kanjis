@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://xwb1kv2jhaox"]
+
+[ext_resource type="Script" uid="uid://krfyupnsf8rj" path="res://tabs_manager.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://srnk2lo1jv8k" path="res://Scenes/UIComponents/tabs_button.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bilr46tjfc8k5" path="res://Scenes/Menus/list_menu.tscn" id="2_7mycd"]
+[ext_resource type="PackedScene" uid="uid://do8yg58qduuty" path="res://Scenes/Menus/adder_menu.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://dptbvamimrcgm" path="res://Scenes/Menus/exercice_menu.tscn" id="4_5vw27"]
+[ext_resource type="PackedScene" uid="uid://o51yaduulvan" path="res://Scenes/Menus/settings_menu.tscn" id="5_kek77"]
+
+[node name="Main" type="CanvasLayer" unique_id=1993111990]
+
+[node name="MainContainer" type="Control" parent="." unique_id=874108013]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer" unique_id=1510476190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TabContainer" type="TabContainer" parent="MainContainer/VBoxContainer" unique_id=591797436 node_paths=PackedStringArray("tabs_button")]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 0
+tabs_position = 1
+tabs_visible = false
+script = ExtResource("1_h2yge")
+tabs_button = [NodePath("../HBoxContainer/Btn_List"), NodePath("../HBoxContainer/Btn_Adder"), NodePath("../HBoxContainer/Btn_Exercice"), NodePath("../HBoxContainer/Btn_Settings")]
+
+[node name="Tab_List" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=309391866]
+layout_mode = 2
+close_with_middle_mouse = false
+metadata/_tab_index = 0
+
+[node name="ListMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_List" unique_id=1009726842 instance=ExtResource("2_7mycd")]
+layout_mode = 1
+
+[node name="Tab_Adder" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=1297514532]
+visible = false
+layout_mode = 2
+close_with_middle_mouse = false
+metadata/_tab_index = 1
+
+[node name="AdderMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_Adder" unique_id=1412412566 instance=ExtResource("3_272bh")]
+layout_mode = 1
+
+[node name="Tab_Exercice" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=1579478628]
+visible = false
+layout_mode = 2
+close_with_middle_mouse = false
+metadata/_tab_index = 2
+
+[node name="ExerciceMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_Exercice" unique_id=33708075 instance=ExtResource("4_5vw27")]
+layout_mode = 1
+
+[node name="Tab_Settings" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=498338731]
+visible = false
+layout_mode = 2
+close_with_middle_mouse = false
+metadata/_tab_index = 3
+
+[node name="SettingsMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_Settings" unique_id=672407860 instance=ExtResource("5_kek77")]
+layout_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/VBoxContainer" unique_id=1005774026]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Btn_List" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=1960416057 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Btn_Adder" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=51288850 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+size_flags_horizontal = 3
+target_index = 1
+
+[node name="Btn_Exercice" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=597109345 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+size_flags_horizontal = 3
+target_index = 2
+
+[node name="Btn_Settings" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=836625360 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+size_flags_horizontal = 3
+target_index = 3

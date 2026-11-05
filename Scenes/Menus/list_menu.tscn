@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bilr46tjfc8k5"]
+
+[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/base_menu.tscn" id="1_wiiu3"]
+
+[node name="ListMenu" unique_id=1009726842 instance=ExtResource("1_wiiu3")]
+title = "Item list"

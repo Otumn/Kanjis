@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://do8yg58qduuty"]
+
+[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/base_menu.tscn" id="1_hcwbm"]
+[ext_resource type="Script" uid="uid://dtpywl718cqfq" path="res://Scenes/Menus/adder_menu.gd" id="2_njlxp"]
+[ext_resource type="PackedScene" uid="uid://b3roj3um41iek" path="res://Scenes/UIComponents/app_mode_button.tscn" id="2_pwv0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
+
+[node name="AdderMenu" unique_id=1009726842 instance=ExtResource("1_hcwbm")]
+script = ExtResource("2_njlxp")
+title = "Add an element"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="0" unique_id=1492909388]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="AppModeButton" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="1" unique_id=280277447 instance=ExtResource("2_pwv0l")]
+layout_mode = 2
+
+[node name="DoubleParent" type="Control" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="2" unique_id=4859486]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WordAddingParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent" index="0" unique_id=941419949]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="0" unique_id=494144445]
+layout_mode = 2
+text = "Add a word element"
+
+[node name="KanjiAddingParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent" index="1" unique_id=233997762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="0" unique_id=1608432954]
+layout_mode = 2
+text = "Add a kanji element"
+
+[connection signal="mode_changed" from="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/AppModeButton" to="." method="_on_app_mode_button_mode_changed"]

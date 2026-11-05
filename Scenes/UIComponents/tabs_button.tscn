@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://srnk2lo1jv8k"]
+
+[ext_resource type="ButtonGroup" uid="uid://bfv4wu0b0dh3x" path="res://Scenes/tabs_buttons_group.tres" id="1_05jg0"]
+[ext_resource type="Texture2D" uid="uid://dfc4n3qre8306" path="res://Test.png" id="1_ynjnt"]
+[ext_resource type="Script" uid="uid://18jtro4k1wwf" path="res://Scenes/UIComponents/tabs_button.gd" id="2_tk1mo"]
+
+[node name="Tabs_Button" type="Button" unique_id=1960416057]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
+button_group = ExtResource("1_05jg0")
+icon = ExtResource("1_ynjnt")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_tk1mo")
+new_icon = ExtResource("1_ynjnt")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
