@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://do8yg58qduuty"]
 
-[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/base_menu.tscn" id="1_hcwbm"]
+[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/Menus/base_menu.tscn" id="1_hcwbm"]
 [ext_resource type="Script" uid="uid://dtpywl718cqfq" path="res://Scenes/Menus/adder_menu.gd" id="2_njlxp"]
 [ext_resource type="PackedScene" uid="uid://b3roj3um41iek" path="res://Scenes/UIComponents/app_mode_button.tscn" id="2_pwv0l"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clody"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xlqa3"]
 
 [node name="AdderMenu" unique_id=1009726842 instance=ExtResource("1_hcwbm")]
 script = ExtResource("2_njlxp")
@@ -29,11 +33,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="0" unique_id=494144445]
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="0" unique_id=1949446028]
 layout_mode = 2
-text = "Add a word element"
+theme_override_constants/separation = 57
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Wrd_Title" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="1" unique_id=494144445]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Add a Word"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="2" unique_id=491522662]
+layout_mode = 2
+theme_override_constants/separation = 128
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Wrd_Input_Jap" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="3" unique_id=1793778146]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "japanese word"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="4" unique_id=1692353022]
+layout_mode = 2
+theme_override_constants/separation = 71
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Wrd_Input_Kana" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="5" unique_id=333137214]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "kana"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="6" unique_id=1681094680]
+layout_mode = 2
+theme_override_constants/separation = 71
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Wrd_Input_Translation" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent" index="7" unique_id=538605956]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "translation"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
 
 [node name="KanjiAddingParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent" index="1" unique_id=233997762]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,8 +92,79 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="0" unique_id=1608432954]
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="0" unique_id=1570363674]
 layout_mode = 2
-text = "Add a kanji element"
+theme_override_constants/separation = 57
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Knj_Title" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="1" unique_id=1608432954]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Add a Kanji"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="2" unique_id=1051278087]
+layout_mode = 2
+theme_override_constants/separation = 128
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Knj_Input_Jap" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="3" unique_id=2069795518]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "Kanji"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="4" unique_id=1741583704]
+layout_mode = 2
+theme_override_constants/separation = 71
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Knj_Input_Kun" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="5" unique_id=1714602320]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "kunyomi"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="6" unique_id=1424227500]
+layout_mode = 2
+theme_override_constants/separation = 71
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Knj_Input_On" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="7" unique_id=1568821613]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "onyomi"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="8" unique_id=230276463]
+layout_mode = 2
+theme_override_constants/separation = 71
+theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
+
+[node name="Knj_Input_Translation" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="9" unique_id=983838582]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+placeholder_text = "translation"
+alignment = 1
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="Btn_Validate" type="Button" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="3" unique_id=95122457]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ADD"
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="4" unique_id=907793813]
+layout_mode = 2
+theme_override_constants/separation = 143
+theme_override_styles/separator = SubResource("StyleBoxEmpty_xlqa3")
 
 [connection signal="mode_changed" from="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/AppModeButton" to="." method="_on_app_mode_button_mode_changed"]
+[connection signal="button_down" from="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/Btn_Validate" to="." method="_on_btn_validate_button_down"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dptbvamimrcgm"]
 
-[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/base_menu.tscn" id="1_itqyw"]
+[ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/Menus/base_menu.tscn" id="1_itqyw"]
 
 [node name="ExerciceMenu" unique_id=1009726842 instance=ExtResource("1_itqyw")]
 title = "Exercice"

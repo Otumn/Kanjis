@@ -14,6 +14,11 @@ config/name="Kanjis"
 run/main_scene="uid://xwb1kv2jhaox"
 config/features=PackedStringArray("4.7", "Mobile")
 
+[autoload]
+
+SaveLogic="*uid://dq1s4bktdsokg"
+PopupLogic="*uid://bdcblpxswwf8m"
+
 [display]
 
 window/size/viewport_width=540
@@ -33,3 +38,4 @@ project/assembly_name="Kanjis"
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

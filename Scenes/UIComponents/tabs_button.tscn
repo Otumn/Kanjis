@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://srnk2lo1jv8k"]
 
-[ext_resource type="ButtonGroup" uid="uid://bfv4wu0b0dh3x" path="res://Scenes/tabs_buttons_group.tres" id="1_05jg0"]
+[ext_resource type="ButtonGroup" uid="uid://bfv4wu0b0dh3x" path="res://Scenes/Menus/tabs_buttons_group.tres" id="1_05jg0"]
 [ext_resource type="Texture2D" uid="uid://dfc4n3qre8306" path="res://Test.png" id="1_ynjnt"]
 [ext_resource type="Script" uid="uid://18jtro4k1wwf" path="res://Scenes/UIComponents/tabs_button.gd" id="2_tk1mo"]
 
