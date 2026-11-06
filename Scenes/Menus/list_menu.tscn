@@ -113,22 +113,22 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "Type : "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="1" unique_id=290579840]
+[node name="WordParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="1" unique_id=290579840]
 visible = false
 layout_mode = 2
 
-[node name="Label_Kanas" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer" index="0" unique_id=2091447300]
+[node name="Label_Kanas" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/WordParent" index="0" unique_id=2091447300]
 layout_mode = 2
 text = "Japanese :"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="2" unique_id=95022777]
+[node name="KanjiParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="2" unique_id=95022777]
 layout_mode = 2
 
-[node name="Label_Kunyomi" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer2" index="0" unique_id=1130492017]
+[node name="Label_Kunyomi" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/KanjiParent" index="0" unique_id=1130492017]
 layout_mode = 2
 text = "Kunyomi :"
 
-[node name="Label_Onyomi" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer2" index="1" unique_id=142451409]
+[node name="Label_Onyomi" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/KanjiParent" index="1" unique_id=142451409]
 layout_mode = 2
 text = "Onyomi :"
 
@@ -190,4 +190,5 @@ size_flags_horizontal = 3
 icon = ExtResource("6_4be5h")
 icon_alignment = 1
 
+[connection signal="button_down" from="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer/Btn_Delete" to="." method="_on_btn_delete_button_down"]
 [connection signal="button_down" from="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/Btn_GoBack" to="." method="_on_btn_go_back_button_down"]

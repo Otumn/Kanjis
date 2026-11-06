@@ -41,7 +41,11 @@ func save_new_element(element:ElementData):
 	on_new_element_added.emit(element)
 
 func delete_element(id:int):
-	pass
+	for e in data.elements:
+		if e.id == id:
+			data.elements.erase(e)
+			save_data()
+			return
 
 func delete_data():
 	data = SaveData.new()
