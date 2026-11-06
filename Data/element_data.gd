@@ -23,3 +23,17 @@ extends Resource
 @export var last_seen_day:int = 0
 @export var last_seen_month:int = 0
 @export var last_seen_year:int = 0
+
+func get_full_kunyomi() -> String:
+	var full:String = ""
+	for k in kunyomi:
+		full += k
+		full += ", "
+	return full
+
+func get_full_onyomi() -> String:
+	var full:String = ""
+	for o in onyomi:
+		full += o
+		full += ", "
+	return full
