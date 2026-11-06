@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://xwb1kv2jhaox"]
 
+[ext_resource type="Script" uid="uid://uotbbeui8n1f" path="res://main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://krfyupnsf8rj" path="res://tabs_manager.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://srnk2lo1jv8k" path="res://Scenes/UIComponents/tabs_button.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bilr46tjfc8k5" path="res://Scenes/Menus/list_menu.tscn" id="2_7mycd"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://o51yaduulvan" path="res://Scenes/Menus/settings_menu.tscn" id="5_kek77"]
 
 [node name="Main" type="CanvasLayer" unique_id=1993111990]
+script = ExtResource("1_272bh")
 
 [node name="MainContainer" type="Control" parent="." unique_id=874108013]
 layout_mode = 3

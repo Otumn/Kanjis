@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ddickq3rnv0th"]
+
+[ext_resource type="Script" uid="uid://2h78uaywelef" path="res://Scenes/UIComponents/card_list_item.gd" id="1_gfy5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
+
+[node name="CardListItem" type="Control" unique_id=1321814287]
+custom_minimum_size = Vector2(0, 55)
+custom_maximum_size = Vector2(540, 55)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_gfy5v")
+
+[node name="Btn_Main" type="Button" parent="." unique_id=358785082]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Btn_Main" unique_id=322415313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Btn_Main/MarginContainer" unique_id=1440041611]
+layout_mode = 2
+
+[node name="Control" type="PanelContainer" parent="Btn_Main/MarginContainer/HBoxContainer" unique_id=1975909463]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Btn_Main/MarginContainer/HBoxContainer/Control" unique_id=1358800480]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_right = 1
+
+[node name="Label_Index" type="Label" parent="Btn_Main/MarginContainer/HBoxContainer/Control/MarginContainer" unique_id=1873495135]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 6
+text = "0"
+
+[node name="Label_Japanese" type="Label" parent="Btn_Main/MarginContainer/HBoxContainer/Control" unique_id=963135017]
+custom_minimum_size = Vector2(51, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 36
+text = "竜"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Btn_Main/MarginContainer/HBoxContainer" unique_id=101518771]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="Label_Translation" type="Label" parent="Btn_Main/MarginContainer/HBoxContainer" unique_id=105683729]
+custom_minimum_size = Vector2(51, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 36
+text = "Card name"
+vertical_alignment = 1
+
+[node name="Bar_Mastery" type="ProgressBar" parent="Btn_Main/MarginContainer/HBoxContainer" unique_id=180507504]
+custom_minimum_size = Vector2(51, 0)
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 1
+max_value = 1.0
+value = 0.45
+fill_mode = 3
+show_percentage = false
+
+[connection signal="button_down" from="Btn_Main" to="." method="_on_btn_main_button_down"]

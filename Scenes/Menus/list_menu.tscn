@@ -1,6 +1,193 @@
 [gd_scene format=3 uid="uid://bilr46tjfc8k5"]
 
 [ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/Menus/base_menu.tscn" id="1_wiiu3"]
+[ext_resource type="Script" uid="uid://ch76jmos74aak" path="res://Scenes/Menus/list_menu.gd" id="2_cwehc"]
+[ext_resource type="Texture2D" uid="uid://c5q6h7p182gn3" path="res://Sprites/Icons/Icon_Filter.png" id="2_jj57r"]
+[ext_resource type="PackedScene" uid="uid://ddickq3rnv0th" path="res://Scenes/UIComponents/card_list_item.tscn" id="3_334ok"]
+[ext_resource type="Texture2D" uid="uid://yd5s55cow0js" path="res://Sprites/Icons/Icon_Bin.png" id="5_4be5h"]
+[ext_resource type="Texture2D" uid="uid://bhldim1lqm3tq" path="res://Sprites/Icons/Icon_Cross.png" id="6_4be5h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
 
 [node name="ListMenu" unique_id=1009726842 instance=ExtResource("1_wiiu3")]
+script = ExtResource("2_cwehc")
+list_item = ExtResource("3_334ok")
 title = "Item list"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="0" unique_id=1288121724]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="1" unique_id=605860951]
+layout_mode = 2
+
+[node name="Input_Search" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/HBoxContainer" index="0" unique_id=1942204215]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search for cards"
+
+[node name="Btn_Filter" type="Button" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/HBoxContainer" index="1" unique_id=768372098]
+texture_filter = 1
+layout_mode = 2
+icon = ExtResource("2_jj57r")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="2" unique_id=253612503]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="3" unique_id=1231147352]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ListParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ScrollContainer" index="0" unique_id=1074280852]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FocusParent" type="Control" parent="VBoxContainer/Container/ScrollContainer/MarginContainer" parent_id_path=PackedInt32Array(1977631619) index="1" unique_id=1590727020]
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent" index="0" unique_id=1475175022]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.25882354)
+
+[node name="FocusFrame" type="ColorRect" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect" index="0" unique_id=926646189]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0999862, 0.099985935, 0.09998592, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame" index="0" unique_id=444864287]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer" index="0" unique_id=409620915]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.20871013, 0.20871016, 0.20871013, 1)
+
+[node name="Label_Title" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/ColorRect" index="0" unique_id=758476905]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Focused element"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer" index="1" unique_id=151089300]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer" index="0" unique_id=1502413849]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label_Type" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="0" unique_id=811956322]
+layout_mode = 2
+text = "Type : "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="1" unique_id=290579840]
+visible = false
+layout_mode = 2
+
+[node name="Label_Kanas" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer" index="0" unique_id=2091447300]
+layout_mode = 2
+text = "Japanese :"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="2" unique_id=95022777]
+layout_mode = 2
+
+[node name="Label_Kunyomi" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer2" index="0" unique_id=1130492017]
+layout_mode = 2
+text = "Kunyomi :"
+
+[node name="Label_Onyomi" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/VBoxContainer2" index="1" unique_id=142451409]
+layout_mode = 2
+text = "Onyomi :"
+
+[node name="Label_Translation" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="3" unique_id=730016448]
+layout_mode = 2
+text = "Translation :"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="4" unique_id=962877397]
+layout_mode = 2
+
+[node name="Label_Rights" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1894530422]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rights : "
+
+[node name="Label_Wrongs" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1" unique_id=1537924757]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wrongs :"
+
+[node name="Label_Date" type="Label" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="5" unique_id=661199811]
+layout_mode = 2
+text = "Last worked on :"
+
+[node name="Bar_Mastery" type="ProgressBar" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="6" unique_id=1301476986]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+max_value = 1.0
+value = 0.42
+show_percentage = false
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer" index="7" unique_id=1695185137]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="0" unique_id=493488148]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Btn_Delete" type="Button" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer" index="0" unique_id=1394314385]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("5_4be5h")
+icon_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2" index="1" unique_id=253438959]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="Btn_GoBack" type="Button" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer2" index="0" unique_id=1184569198]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("6_4be5h")
+icon_alignment = 1
+
+[connection signal="button_down" from="VBoxContainer/Container/ScrollContainer/MarginContainer/FocusParent/ColorRect/FocusFrame/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/Btn_GoBack" to="." method="_on_btn_go_back_button_down"]
