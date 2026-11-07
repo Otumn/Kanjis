@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://do8yg58qduuty" path="res://Scenes/Menus/adder_menu.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://dptbvamimrcgm" path="res://Scenes/Menus/exercice_menu.tscn" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://o51yaduulvan" path="res://Scenes/Menus/settings_menu.tscn" id="5_kek77"]
+[ext_resource type="PackedScene" uid="uid://c70fm7jjdbdch" path="res://Scenes/Menus/stats_menu.tscn" id="6_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://dal774i3nuoxc" path="res://Sprites/Icons/Icon_Exercice.png" id="8_4c57u"]
+[ext_resource type="Texture2D" uid="uid://f02ss3rqoccb" path="res://Sprites/Icons/Icon_Stats.png" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://bv4onloqb427v" path="res://Sprites/Icons/Icon_List.png" id="8_dg77c"]
+[ext_resource type="Texture2D" uid="uid://cglxuwjbcqxhh" path="res://Sprites/Icons/Icon_Adder.png" id="8_efxa6"]
+[ext_resource type="Texture2D" uid="uid://dnnn5wk7bjwi1" path="res://Sprites/Icons/Icon_Settings.png" id="9_kek77"]
 
 [node name="Main" type="CanvasLayer" unique_id=1993111990]
 script = ExtResource("1_272bh")
@@ -37,7 +43,7 @@ current_tab = 0
 tabs_position = 1
 tabs_visible = false
 script = ExtResource("1_h2yge")
-tabs_button = [NodePath("../HBoxContainer/Btn_List"), NodePath("../HBoxContainer/Btn_Adder"), NodePath("../HBoxContainer/Btn_Exercice"), NodePath("../HBoxContainer/Btn_Settings")]
+tabs_button = [NodePath("../HBoxContainer/Btn_List"), NodePath("../HBoxContainer/Btn_Adder"), NodePath("../HBoxContainer/Btn_Exercice"), NodePath("../HBoxContainer/Btn_Settings"), NodePath("../HBoxContainer/Btn_Stats")]
 
 [node name="Tab_List" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=309391866]
 layout_mode = 2
@@ -65,11 +71,20 @@ metadata/_tab_index = 2
 [node name="ExerciceMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_Exercice" unique_id=33708075 instance=ExtResource("4_5vw27")]
 layout_mode = 1
 
-[node name="Tab_Settings" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=498338731]
+[node name="Tab_Stats" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=1312217747]
 visible = false
 layout_mode = 2
 close_with_middle_mouse = false
 metadata/_tab_index = 3
+
+[node name="StatsMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_Stats" unique_id=57490961 instance=ExtResource("6_ycdy4")]
+layout_mode = 1
+
+[node name="Tab_Settings" type="TabBar" parent="MainContainer/VBoxContainer/TabContainer" unique_id=498338731]
+visible = false
+layout_mode = 2
+close_with_middle_mouse = false
+metadata/_tab_index = 4
 
 [node name="SettingsMenu" parent="MainContainer/VBoxContainer/TabContainer/Tab_Settings" unique_id=672407860 instance=ExtResource("5_kek77")]
 layout_mode = 1
@@ -81,18 +96,28 @@ theme_override_constants/separation = 0
 [node name="Btn_List" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=1960416057 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 size_flags_horizontal = 3
+new_icon = ExtResource("8_dg77c")
 
 [node name="Btn_Adder" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=51288850 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 size_flags_horizontal = 3
 target_index = 1
+new_icon = ExtResource("8_efxa6")
 
 [node name="Btn_Exercice" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=597109345 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 size_flags_horizontal = 3
 target_index = 2
+new_icon = ExtResource("8_4c57u")
+
+[node name="Btn_Stats" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=223167122 instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+size_flags_horizontal = 3
+target_index = 3
+new_icon = ExtResource("8_5vw27")
 
 [node name="Btn_Settings" parent="MainContainer/VBoxContainer/HBoxContainer" unique_id=836625360 instance=ExtResource("1_ig7tw")]
 layout_mode = 2
 size_flags_horizontal = 3
-target_index = 3
+target_index = 4
+new_icon = ExtResource("9_kek77")
