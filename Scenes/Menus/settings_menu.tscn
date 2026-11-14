@@ -1,6 +1,68 @@
 [gd_scene format=3 uid="uid://o51yaduulvan"]
 
 [ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/Menus/base_menu.tscn" id="1_ou5ra"]
+[ext_resource type="PackedScene" uid="uid://bui1bcu7d6qqu" path="res://Scenes/UIComponents/Configs/config_checkbox.tscn" id="2_437ti"]
+[ext_resource type="Script" uid="uid://beh0ecy2mud66" path="res://Scenes/Menus/settings_menu.gd" id="2_ojbgt"]
+[ext_resource type="ButtonGroup" uid="uid://vaq3bcm2d6b7" path="res://Scenes/UIComponents/setting_exercice_checkboxes_button_group.tres" id="3_s1iiq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
 
 [node name="SettingsMenu" unique_id=1009726842 instance=ExtResource("1_ou5ra")]
+script = ExtResource("2_ojbgt")
 title = "Settings"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="0" unique_id=500334549]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="1" unique_id=1438225035]
+custom_minimum_size = Vector2(0, 530)
+layout_mode = 2
+current_tab = 0
+
+[node name="Exercice settings" type="TabBar" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/TabContainer" index="1" unique_id=1995953465]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/TabContainer/Exercice settings" index="1" unique_id=1125247401]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/TabContainer/Exercice settings/MarginContainer" index="0" unique_id=785255691]
+layout_mode = 2
+
+[node name="Config_UseAll" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/TabContainer/Exercice settings/MarginContainer/VBoxContainer" index="0" unique_id=898852826 instance=ExtResource("2_437ti")]
+layout_mode = 2
+checked = true
+button_group = ExtResource("3_s1iiq")
+config_section = "Exercice"
+parameter_name = "use_all_cards"
+
+[node name="Config_UseWords" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/TabContainer/Exercice settings/MarginContainer/VBoxContainer" index="1" unique_id=37260923 instance=ExtResource("2_437ti")]
+layout_mode = 2
+checked = false
+button_group = ExtResource("3_s1iiq")
+config_section = "Exercice"
+parameter_name = "use_only_words"
+
+[node name="Config_UseKanji" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/TabContainer/Exercice settings/MarginContainer/VBoxContainer" index="2" unique_id=1343242198 instance=ExtResource("2_437ti")]
+layout_mode = 2
+checked = false
+button_group = ExtResource("3_s1iiq")
+config_section = "Exercice"
+parameter_name = "use_only_kanji"
+
+[node name="Btn_save_settings" type="Button" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="2" unique_id=992347385]
+layout_mode = 2
+disabled = true
+text = "Save settings"
+
+[connection signal="button_down" from="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/Btn_save_settings" to="." method="_on_btn_save_settings_button_down"]

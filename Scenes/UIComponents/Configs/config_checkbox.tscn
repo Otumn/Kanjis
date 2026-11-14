@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bui1bcu7d6qqu"]
+
+[ext_resource type="PackedScene" uid="uid://drlmay7on2l2b" path="res://Scenes/UIComponents/Configs/ui_config.tscn" id="1_npc3e"]
+[ext_resource type="Script" uid="uid://cmbevubktfy6e" path="res://Scenes/UIComponents/Configs/config_checkbox.gd" id="2_r8wy5"]
+
+[node name="ConfigCheckbox" unique_id=898852826 instance=ExtResource("1_npc3e")]
+script = ExtResource("2_r8wy5")
+button_group = null
+
+[node name="SettingEdit" parent="HBoxContainer" parent_id_path=PackedInt32Array(1560398358) index="2" unique_id=258047075]
+alignment = 0
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer/SettingEdit" index="0" unique_id=740892414]
+layout_mode = 2
+
+[connection signal="toggled" from="HBoxContainer/SettingEdit/CheckBox" to="." method="_on_check_box_toggled"]

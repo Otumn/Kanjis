@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bem17owva63xn"]
+
+[ext_resource type="PackedScene" uid="uid://drlmay7on2l2b" path="res://Scenes/UIComponents/Configs/ui_config.tscn" id="1_heivs"]
+[ext_resource type="Script" uid="uid://dwrnm6dl7jpuo" path="res://Scenes/UIComponents/Configs/config_dropdown.gd" id="2_1nkuk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
+
+[node name="OptionDropdown" unique_id=898852826 instance=ExtResource("1_heivs")]
+script = ExtResource("2_1nkuk")
+options = Array[String]([])
+
+[node name="ParamLabel" parent="HBoxContainer" parent_id_path=PackedInt32Array(1560398358) index="0" unique_id=304867635]
+text = "Dropdown"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/SettingEdit" parent_id_path=PackedInt32Array(258047075) index="0" unique_id=1756153626]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/SettingEdit" parent_id_path=PackedInt32Array(258047075) index="1" unique_id=1477995592]
+layout_mode = 2
+theme_override_constants/separation = 250
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[connection signal="item_selected" from="HBoxContainer/SettingEdit/OptionButton" to="." method="_on_option_button_item_selected"]

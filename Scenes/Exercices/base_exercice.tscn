@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bffavgiv7icx2"]
+
+[ext_resource type="Script" uid="uid://dulb17ea862jg" path="res://Scenes/Exercices/base_exercice.gd" id="1_3g3ym"]
+
+[node name="BaseExercice" type="Control" unique_id=1928140774]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3g3ym")

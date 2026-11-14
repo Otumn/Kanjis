@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6seyfy7jfqqt"]
+
+[ext_resource type="PackedScene" uid="uid://drlmay7on2l2b" path="res://Scenes/UIComponents/Configs/ui_config.tscn" id="1_cnu66"]
+[ext_resource type="Script" uid="uid://dr4j1gjxsstmj" path="res://Scenes/UIComponents/Configs/config_keybind.gd" id="2_cnu66"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
+
+[node name="ConfigKeybind" unique_id=898852826 groups=["KeybindButton"] instance=ExtResource("1_cnu66")]
+script = ExtResource("2_cnu66")
+
+[node name="ParamLabel" parent="HBoxContainer" parent_id_path=PackedInt32Array(1560398358) index="0" unique_id=304867635]
+text = "Keybind"
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer/SettingEdit" parent_id_path=PackedInt32Array(258047075) index="0" unique_id=1953364507]
+layout_mode = 2
+theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="Button" type="Button" parent="HBoxContainer/SettingEdit" parent_id_path=PackedInt32Array(258047075) index="1" unique_id=1800092616]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Key"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer/SettingEdit" parent_id_path=PackedInt32Array(258047075) index="2" unique_id=1413265249]
+layout_mode = 2
+theme_override_constants/separation = 200
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[connection signal="toggled" from="HBoxContainer/SettingEdit/Button" to="." method="_on_button_toggled"]
