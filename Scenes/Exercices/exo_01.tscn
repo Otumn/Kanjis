@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjsx6fv6nmsgo"]
+
+[ext_resource type="PackedScene" uid="uid://bffavgiv7icx2" path="res://Scenes/Exercices/base_exercice.tscn" id="1_1vrr5"]
+
+[node name="Exo01" unique_id=1928140774 instance=ExtResource("1_1vrr5")]
+exercice_name = "Exo01"

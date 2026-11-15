@@ -1,6 +1,7 @@
 class_name UIConfig
 extends Control
 
+@warning_ignore("unused_signal")
 signal config_updated(old_value:Variant, new_value:Variant)
 
 @export_group("Save config")
@@ -24,5 +25,6 @@ func clean_param_name(text:String) -> String:
 func get_config_value() -> Variant:
 	return null
 
+@warning_ignore("unused_parameter")
 func set_config_value(value: Variant):
 	pass

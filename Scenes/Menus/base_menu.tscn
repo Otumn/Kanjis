@@ -78,3 +78,4 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
