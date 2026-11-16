@@ -8,7 +8,8 @@ signal on_exercice_fail
 @export var exercice_name:String = "Exercice"
 @export var mastery_value: float = 0.1
 @export var fail_value: float = 0.1
-@export var word_exercice:bool = true
+enum ExerciceType{WORD_AND_KANJI, WORD_ONLY, KANJI_ONLY}
+@export var type : ExerciceType = ExerciceType.WORD_AND_KANJI
 
 var tested_card:ElementData
 

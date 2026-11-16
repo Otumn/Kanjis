@@ -75,7 +75,7 @@ func get_next_element_id() -> int:
 	if data == null:
 		load_data()
 	
-	return data.elements.size()
+	return data.elements[data.elements.size() - 1].id + 1
 #endregion
 
 #region CONFIG SAVE MANAGEMENT

@@ -35,9 +35,11 @@ func display_new_exercice(card: ElementData):
 
 func _on_exo_success():
 	disconnect_exo()
+	display_new_exercice(SaveLogic.data.get_new_card())
 
 func _on_exo_failure():
 	disconnect_exo()
+	display_new_exercice(SaveLogic.data.get_new_card())
 
 func disconnect_exo():
 	SaveLogic.data.add_exercice(current_exercice.exercice_name)

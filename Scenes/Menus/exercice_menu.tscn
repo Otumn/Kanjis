@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/Menus/base_menu.tscn" id="1_itqyw"]
 [ext_resource type="Script" uid="uid://c7o1tac3dqr07" path="res://Scenes/Menus/exercice_menu.gd" id="2_tcfre"]
 [ext_resource type="PackedScene" uid="uid://byi3osst4hv34" path="res://Scenes/Exercices/exercice_find_missing.tscn" id="3_hdf6o"]
+[ext_resource type="PackedScene" uid="uid://b6jx36ikkjuvq" path="res://Scenes/Exercices/exercice_draw_kanji.tscn" id="3_ycq4j"]
+[ext_resource type="PackedScene" uid="uid://dar3tifykpc7p" path="res://Scenes/Exercices/exercice_pick_right.tscn" id="4_keynk"]
+[ext_resource type="PackedScene" uid="uid://chro285tei7ke" path="res://Scenes/Exercices/exercice_time_attack.tscn" id="6_4hq6n"]
 
 [node name="ExerciceMenu" unique_id=1009726842 instance=ExtResource("1_itqyw")]
 script = ExtResource("2_tcfre")
@@ -12,5 +15,14 @@ title = "Exercice"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Exercice_FindMissing" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="0" unique_id=1928140774 instance=ExtResource("3_hdf6o")]
+[node name="ExerciceDrawKanji" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="0" unique_id=1928140774 instance=ExtResource("3_ycq4j")]
+layout_mode = 1
+
+[node name="Exercice_FindMissing" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="1" unique_id=214987248 instance=ExtResource("3_hdf6o")]
+layout_mode = 1
+
+[node name="ExercicePickRight" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="2" unique_id=622201363 instance=ExtResource("4_keynk")]
+layout_mode = 1
+
+[node name="ExerciceTimeAttack" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="3" unique_id=1212414789 instance=ExtResource("6_4hq6n")]
 layout_mode = 1

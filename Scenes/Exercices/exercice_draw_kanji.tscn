@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b6jx36ikkjuvq"]
+
+[ext_resource type="PackedScene" uid="uid://bffavgiv7icx2" path="res://Scenes/Exercices/base_exercice.tscn" id="1_utl3s"]
+[ext_resource type="Script" uid="uid://18rscurfknw4" path="res://Scenes/Exercices/exercice_draw_kanji.gd" id="2_57ov8"]
+[ext_resource type="Texture2D" uid="uid://dfc4n3qre8306" path="res://Test.png" id="2_e64kc"]
+[ext_resource type="Texture2D" uid="uid://yqrlmlami6hp" path="res://Sprites/Icons/Icon_Arrow_Down.png" id="3_22ln0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utl3s"]
+
+[node name="ExerciceDrawKanji" unique_id=1928140774 instance=ExtResource("1_utl3s")]
+script = ExtResource("2_57ov8")
+exercice_name = "DrawKanji"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0" unique_id=426450046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=513873577]
+layout_mode = 2
+theme_override_constants/separation = 160
+theme_override_styles/separator = SubResource("StyleBoxEmpty_utl3s")
+
+[node name="Label_Translation" type="Label" parent="VBoxContainer" index="1" unique_id=156582492]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "TRANSLATION"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" index="2" unique_id=742882963]
+layout_mode = 2
+theme_override_constants/separation = 75
+theme_override_styles/separator = SubResource("StyleBoxEmpty_utl3s")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" index="3" unique_id=1137438773]
+custom_minimum_size = Vector2(0, 540)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer" index="0" unique_id=1777619089]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_e64kc")
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer" index="4" unique_id=1701115711]
+layout_mode = 2
+theme_override_constants/separation = 75
+theme_override_styles/separator = SubResource("StyleBoxEmpty_utl3s")
+
+[node name="Btn_Validate" type="Button" parent="VBoxContainer" index="5" unique_id=446284160]
+texture_filter = 1
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_22ln0")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="button_down" from="VBoxContainer/Btn_Validate" to="." method="_on_btn_validate_button_down"]

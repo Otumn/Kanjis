@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://chro285tei7ke"]
+
+[ext_resource type="PackedScene" uid="uid://bffavgiv7icx2" path="res://Scenes/Exercices/base_exercice.tscn" id="1_28gg5"]
+[ext_resource type="Script" uid="uid://cm05klkscpohx" path="res://Scenes/Exercices/exercice_time_attack.gd" id="2_1olym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28gg5"]
+
+[node name="ExerciceTimeAttack" unique_id=1928140774 instance=ExtResource("1_28gg5")]
+script = ExtResource("2_1olym")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0" unique_id=1848586266]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=941494782]
+layout_mode = 2
+theme_override_constants/separation = 160
+theme_override_styles/separator = SubResource("StyleBoxEmpty_28gg5")
+
+[node name="Label_Translation" type="Label" parent="VBoxContainer" index="1" unique_id=126349224]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "GOAL"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" index="2" unique_id=867175959]
+layout_mode = 2
+theme_override_constants/separation = 75
+theme_override_styles/separator = SubResource("StyleBoxEmpty_28gg5")
+
+[node name="Btn_Answer" type="Button" parent="VBoxContainer" index="3" unique_id=149372401]
+custom_minimum_size = Vector2(0, 540)
+layout_mode = 2
+
+[connection signal="button_down" from="VBoxContainer/Btn_Answer" to="." method="_on_btn_answer_button_down"]

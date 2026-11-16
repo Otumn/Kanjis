@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://byi3osst4hv34"]
 
 [ext_resource type="PackedScene" uid="uid://bffavgiv7icx2" path="res://Scenes/Exercices/base_exercice.tscn" id="1_u3kh5"]
+[ext_resource type="Script" uid="uid://dkua2yjbm3ks1" path="res://Scenes/Exercices/exercice_find_missing.gd" id="2_84wx0"]
 [ext_resource type="Texture2D" uid="uid://yqrlmlami6hp" path="res://Sprites/Icons/Icon_Arrow_Down.png" id="2_iducr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
 
-[node name="Exercice_FindMissing" unique_id=1928140774 instance=ExtResource("1_u3kh5")]
+[node name="ExerciceFindMissing" unique_id=1928140774 instance=ExtResource("1_u3kh5")]
+script = ExtResource("2_84wx0")
 exercice_name = "FindMissing"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0" unique_id=1633065771]
@@ -18,7 +20,7 @@ grow_vertical = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=403669155]
 layout_mode = 2
-theme_override_constants/separation = 163
+theme_override_constants/separation = 160
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
 
 [node name="Label_MainWriting" type="Label" parent="VBoxContainer" index="1" unique_id=1774573588]
@@ -64,3 +66,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 icon = ExtResource("2_iducr")
 icon_alignment = 1
+
+[connection signal="button_down" from="VBoxContainer/Btn_Validate" to="." method="_on_btn_validate_button_down"]
