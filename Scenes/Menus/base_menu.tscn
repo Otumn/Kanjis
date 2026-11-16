@@ -40,6 +40,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer/TitleBackColor/MarginContainer" unique_id=2054351183]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Menu"
 vertical_alignment = 1
 

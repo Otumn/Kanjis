@@ -5,8 +5,6 @@ signal on_exercice_setup
 signal on_exercice_success
 signal on_exercice_fail
 
-@onready var test_label: Label = $TestLabel
-
 @export var exercice_name:String = "Exercice"
 @export var mastery_value: float = 0.1
 @export var fail_value: float = 0.1
@@ -15,7 +13,6 @@ signal on_exercice_fail
 var tested_card:ElementData
 
 func setup_exercice():
-	test_label.text = exercice_name
 	on_exercice_setup.emit()
 
 func validate_exercice():

@@ -2,11 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b06hp6spb0vx8" path="res://Scenes/Menus/base_menu.tscn" id="1_itqyw"]
 [ext_resource type="Script" uid="uid://c7o1tac3dqr07" path="res://Scenes/Menus/exercice_menu.gd" id="2_tcfre"]
-[ext_resource type="PackedScene" uid="uid://bjsx6fv6nmsgo" path="res://Scenes/Exercices/exo_01.tscn" id="3_4hq6n"]
-[ext_resource type="PackedScene" uid="uid://4hgfmkqnnmwt" path="res://Scenes/Exercices/exo_02.tscn" id="4_wri87"]
-[ext_resource type="PackedScene" uid="uid://csdm4lqh77osn" path="res://Scenes/Exercices/exo_03.tscn" id="5_ha5w1"]
-[ext_resource type="PackedScene" uid="uid://cfwiqhhkwnuhh" path="res://Scenes/Exercices/exo_04.tscn" id="6_gt2ha"]
-[ext_resource type="PackedScene" uid="uid://vu075gwydugb" path="res://Scenes/Exercices/exo_05.tscn" id="7_gjeke"]
+[ext_resource type="PackedScene" uid="uid://byi3osst4hv34" path="res://Scenes/Exercices/exercice_find_missing.tscn" id="3_hdf6o"]
 
 [node name="ExerciceMenu" unique_id=1009726842 instance=ExtResource("1_itqyw")]
 script = ExtResource("2_tcfre")
@@ -16,17 +12,5 @@ title = "Exercice"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Exo01" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="0" unique_id=1928140774 instance=ExtResource("3_4hq6n")]
-layout_mode = 1
-
-[node name="Exo02" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="1" unique_id=1206896344 instance=ExtResource("4_wri87")]
-layout_mode = 1
-
-[node name="Exo03" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="2" unique_id=1797247075 instance=ExtResource("5_ha5w1")]
-layout_mode = 1
-
-[node name="Exo04" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="3" unique_id=222031198 instance=ExtResource("6_gt2ha")]
-layout_mode = 1
-
-[node name="Exo05" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="4" unique_id=726619851 instance=ExtResource("7_gjeke")]
+[node name="Exercice_FindMissing" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/ExercicesParent" index="0" unique_id=1928140774 instance=ExtResource("3_hdf6o")]
 layout_mode = 1

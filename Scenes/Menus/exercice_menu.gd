@@ -10,6 +10,7 @@ func _ready() -> void:
 		c = c as BaseExercice
 		exercices.append(c)
 		c.visible = false
+	super._ready()
 
 func menu_selected():
 	display_new_exercice(SaveLogic.data.get_new_card())

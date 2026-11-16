@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://byi3osst4hv34"]
+
+[ext_resource type="PackedScene" uid="uid://bffavgiv7icx2" path="res://Scenes/Exercices/base_exercice.tscn" id="1_u3kh5"]
+[ext_resource type="Texture2D" uid="uid://yqrlmlami6hp" path="res://Sprites/Icons/Icon_Arrow_Down.png" id="2_iducr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8po"]
+
+[node name="Exercice_FindMissing" unique_id=1928140774 instance=ExtResource("1_u3kh5")]
+exercice_name = "FindMissing"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0" unique_id=1633065771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=403669155]
+layout_mode = 2
+theme_override_constants/separation = 163
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="Label_MainWriting" type="Label" parent="VBoxContainer" index="1" unique_id=1774573588]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "MAIN WRITING"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" index="2" unique_id=848581367]
+layout_mode = 2
+theme_override_constants/separation = 21
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="Label_Clue" type="Label" parent="VBoxContainer" index="3" unique_id=157228281]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "CLUE"
+horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer" index="4" unique_id=1434415601]
+layout_mode = 2
+theme_override_constants/separation = 381
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="Input_Answer" type="LineEdit" parent="VBoxContainer" index="5" unique_id=1811844286]
+custom_minimum_size = Vector2(350, 0)
+custom_maximum_size = Vector2(350, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Answer..."
+alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="VBoxContainer" index="6" unique_id=1615210559]
+layout_mode = 2
+theme_override_constants/separation = 163
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
+
+[node name="Btn_Validate" type="Button" parent="VBoxContainer" index="7" unique_id=20439462]
+texture_filter = 1
+custom_minimum_size = Vector2(75, 75)
+custom_maximum_size = Vector2(75, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("2_iducr")
+icon_alignment = 1
