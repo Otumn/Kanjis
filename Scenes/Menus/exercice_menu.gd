@@ -19,6 +19,7 @@ func menu_deselected():
 	disconnect_exo()
 
 func display_new_exercice(card: ElementData):
+	print(card.translation)
 	var excluded_exercices: Array[String] = SaveLogic.data.exercice_memory
 	var possible_exercices: Array[BaseExercice] = []
 	for e in exercices:

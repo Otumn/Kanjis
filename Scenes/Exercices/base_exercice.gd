@@ -20,4 +20,5 @@ func validate_exercice():
 	on_exercice_success.emit()
 
 func fail_exercice():
+	SaveLogic.data.add_trained_card(tested_card)
 	on_exercice_fail.emit()
