@@ -63,3 +63,7 @@ func add_trained_card(card:ElementData):
 func add_exercice(name:String):
 	exercice_memory.push_front(name)
 	exercice_memory.resize(exo_memory_size)
+
+func update_elements_indexes():
+	for i in elements.size():
+		print(str(i))
