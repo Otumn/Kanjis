@@ -21,8 +21,8 @@ PopupLogic="*uid://bdcblpxswwf8m"
 
 [display]
 
-window/size/viewport_width=540
-window/size/viewport_height=1156
+window/size/viewport_width=500
+window/size/viewport_height=1000
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

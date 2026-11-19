@@ -76,6 +76,8 @@ func request_element_deletion(): #no need for arguments, just delete the element
 
 func delete_element():
 	SaveLogic.delete_element(focused_element.id)
+	SaveLogic.update_elements_indexes()
+	SaveLogic.save_data()
 	create_list()
 	defocus()
 

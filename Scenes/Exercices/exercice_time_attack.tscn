@@ -18,7 +18,7 @@ grow_vertical = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=941494782]
 layout_mode = 2
-theme_override_constants/separation = 160
+theme_override_constants/separation = 80
 theme_override_styles/separator = SubResource("StyleBoxEmpty_28gg5")
 
 [node name="Label_Translation" type="Label" parent="VBoxContainer" index="1" unique_id=126349224]

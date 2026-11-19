@@ -21,7 +21,7 @@ grow_vertical = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=513873577]
 layout_mode = 2
-theme_override_constants/separation = 160
+theme_override_constants/separation = 80
 theme_override_styles/separator = SubResource("StyleBoxEmpty_utl3s")
 
 [node name="Label_Translation" type="Label" parent="VBoxContainer" index="1" unique_id=156582492]
@@ -50,7 +50,7 @@ texture = ExtResource("2_e64kc")
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer" index="4" unique_id=1701115711]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 50
 theme_override_styles/separator = SubResource("StyleBoxEmpty_utl3s")
 
 [node name="Btn_Validate" type="Button" parent="VBoxContainer" index="5" unique_id=446284160]

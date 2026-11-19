@@ -53,14 +53,19 @@ func save_new_element(element:ElementData):
 	on_new_element_added.emit(element)
 
 func delete_element(id:int):
+	if data == null:
+		load_data()
+	
 	for e in data.elements:
 		if e.id == id:
 			data.elements.erase(e)
 			on_element_deleted.emit(e)
-			save_data()
 			return
 
 func delete_data():
+	if data == null:
+		load_data()
+	
 	data = SaveData.new()
 	on_data_deleted.emit()
 	save_data()
@@ -76,6 +81,35 @@ func get_next_element_id() -> int:
 		load_data()
 	
 	return data.elements[data.elements.size() - 1].id + 1
+
+func add_trained_card(card_id:int):
+	if data == null:
+		load_data()
+	
+	var date = Time.get_datetime_dict_from_system()
+	data.last_trained.push_front(card_id)
+	data.last_trained.resize(data.trained_memoryd_size)
+	data.elements[card_id].last_seen_day = date["day"]
+	data.elements[card_id].last_seen_month = date["month"]
+	data.elements[card_id].last_seen_year = date["year"]
+
+func add_exercice(exo_name:String):
+	if data == null:
+		load_data()
+	
+	data.exercice_memory.push_front(exo_name)
+	data.exercice_memory.resize(data.exo_memory_size)
+
+func update_elements_indexes():
+	if data == null:
+		load_data()
+	
+	for i in data.elements.size():
+		data.elements[i].id = i
+	
+	data.need_general_list_update = true
+	data.need_word_list_update = true
+	data.need_kanji_list_update = true
 #endregion
 
 #region CONFIG SAVE MANAGEMENT

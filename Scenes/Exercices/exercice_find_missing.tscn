@@ -20,7 +20,7 @@ grow_vertical = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="0" unique_id=403669155]
 layout_mode = 2
-theme_override_constants/separation = 160
+theme_override_constants/separation = 80
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
 
 [node name="Label_MainWriting" type="Label" parent="VBoxContainer" index="1" unique_id=1774573588]
@@ -42,7 +42,7 @@ horizontal_alignment = 1
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer" index="4" unique_id=1434415601]
 layout_mode = 2
-theme_override_constants/separation = 381
+theme_override_constants/separation = 250
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ui8po")
 
 [node name="Input_Answer" type="LineEdit" parent="VBoxContainer" index="5" unique_id=1811844286]

@@ -10,7 +10,6 @@ extends BaseMenu
 @onready var wrd_input_translation: LineEdit = $VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/WordAddingParent/Wrd_Input_Translation
 
 ## KANJI INPUTS
-
 @onready var knj_input_jap: LineEdit = $VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent/Knj_Input_Jap
 @onready var knj_input_kun: LineEdit = $VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent/Knj_Input_Kun
 @onready var knj_input_on: LineEdit = $VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent/Knj_Input_On
@@ -66,6 +65,7 @@ func create_element():
 		new_card.last_seen_year = date["year"]
 		
 		SaveLogic.save_new_element(new_card)
+		SaveLogic.update_elements_indexes()
 		SaveLogic.save_data()
 		
 		clear_fields()
@@ -121,6 +121,7 @@ func create_element():
 		new_card.last_seen_year = date["year"]
 		
 		SaveLogic.save_new_element(new_card)
+		SaveLogic.update_elements_indexes()
 		SaveLogic.save_data()
 		
 		clear_fields()

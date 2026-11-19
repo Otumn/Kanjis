@@ -13,13 +13,12 @@ func _ready() -> void:
 	super._ready()
 
 func menu_selected():
-	display_new_exercice(SaveLogic.data.get_new_card())
+	display_new_exercice()
 
 func menu_deselected():
 	disconnect_exo()
 
-func display_new_exercice(card: ElementData):
-	print(card.translation)
+func display_new_exercice():
 	var excluded_exercices: Array[String] = SaveLogic.data.exercice_memory
 	var possible_exercices: Array[BaseExercice] = []
 	for e in exercices:
@@ -28,7 +27,6 @@ func display_new_exercice(card: ElementData):
 	
 	current_exercice = possible_exercices.pick_random()
 	
-	current_exercice.tested_card = card
 	current_exercice.on_exercice_success.connect(_on_exo_success)
 	current_exercice.on_exercice_fail.connect(_on_exo_failure)
 	current_exercice.setup_exercice()
@@ -36,11 +34,11 @@ func display_new_exercice(card: ElementData):
 
 func _on_exo_success():
 	disconnect_exo()
-	display_new_exercice(SaveLogic.data.get_new_card())
+	display_new_exercice()
 
 func _on_exo_failure():
 	disconnect_exo()
-	display_new_exercice(SaveLogic.data.get_new_card())
+	display_new_exercice()
 
 func disconnect_exo():
 	SaveLogic.data.add_exercice(current_exercice.exercice_name)

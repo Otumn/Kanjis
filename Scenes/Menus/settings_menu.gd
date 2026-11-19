@@ -23,6 +23,9 @@ func create_config_file() -> ConfigFile:
 
 func load_config():
 	var settings: ConfigFile = SaveLogic.load_config()
+	if settings == null:
+		settings = create_config_file()
+		return
 	
 	for c in get_tree().get_nodes_in_group("OptionConfig"):
 		c = c as UIConfig
