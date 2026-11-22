@@ -53,7 +53,6 @@ func create_element():
 			return
 		
 		var new_card:ElementData = ElementData.new()
-		SaveLogic.data.update_elements_indexes()
 		new_card.id = SaveLogic.get_next_element_id()
 		new_card.is_word = true
 		new_card.base_writing = wrd_input_jap.text
@@ -64,8 +63,8 @@ func create_element():
 		new_card.last_seen_month = date["month"]
 		new_card.last_seen_year = date["year"]
 		
-		SaveLogic.save_new_element(new_card)
 		SaveLogic.update_elements_indexes()
+		SaveLogic.save_new_element(new_card)
 		SaveLogic.save_data()
 		
 		clear_fields()

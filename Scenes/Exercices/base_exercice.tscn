@@ -10,3 +10,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3g3ym")
+
+[node name="ResultsParent" type="Control" parent="." unique_id=1801847646]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SuccessParent" type="Control" parent="ResultsParent" unique_id=504153790]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Color_Background" type="ColorRect" parent="ResultsParent/SuccessParent" unique_id=339715372]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11000006, 0.66, 0, 0.39215687)
+
+[node name="FailureParent" type="Control" parent="ResultsParent" unique_id=405398046]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Color_Background" type="ColorRect" parent="ResultsParent/FailureParent" unique_id=1478577143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.99, 0, 0.4454998, 0.39215687)
+
+[node name="ResultTimer" type="Timer" parent="ResultsParent" unique_id=621139810]
+one_shot = true
+
+[connection signal="timeout" from="ResultsParent/ResultTimer" to="." method="_on_result_timer_timeout"]

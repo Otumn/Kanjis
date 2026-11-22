@@ -80,7 +80,7 @@ func get_next_element_id() -> int:
 	if data == null:
 		load_data()
 	
-	return data.elements[data.elements.size() - 1].id + 1
+	return data.elements.size()
 
 func add_trained_card(card_id:int):
 	if data == null:
@@ -88,7 +88,7 @@ func add_trained_card(card_id:int):
 	
 	var date = Time.get_datetime_dict_from_system()
 	data.last_trained.push_front(card_id)
-	data.last_trained.resize(data.trained_memoryd_size)
+	data.last_trained.resize(data.trained_memory_size)
 	data.elements[card_id].last_seen_day = date["day"]
 	data.elements[card_id].last_seen_month = date["month"]
 	data.elements[card_id].last_seen_year = date["year"]

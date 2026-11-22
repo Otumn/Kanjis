@@ -26,6 +26,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="WordAddingParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent" index="0" unique_id=941419949]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,7 +85,6 @@ context_menu_enabled = false
 emoji_menu_enabled = false
 
 [node name="KanjiAddingParent" type="VBoxContainer" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent" index="1" unique_id=233997762]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -118,7 +118,7 @@ emoji_menu_enabled = false
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="4" unique_id=1741583704]
 layout_mode = 2
-theme_override_constants/separation = 71
+theme_override_constants/separation = 55
 theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
 
 [node name="Knj_Input_Kun" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="5" unique_id=1714602320]
@@ -131,7 +131,7 @@ emoji_menu_enabled = false
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="6" unique_id=1424227500]
 layout_mode = 2
-theme_override_constants/separation = 71
+theme_override_constants/separation = 55
 theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
 
 [node name="Knj_Input_On" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="7" unique_id=1568821613]
@@ -144,7 +144,7 @@ emoji_menu_enabled = false
 
 [node name="HSeparator5" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="8" unique_id=230276463]
 layout_mode = 2
-theme_override_constants/separation = 71
+theme_override_constants/separation = 55
 theme_override_styles/separator = SubResource("StyleBoxEmpty_clody")
 
 [node name="Knj_Input_Translation" type="LineEdit" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/DoubleParent/KanjiAddingParent" index="9" unique_id=983838582]
@@ -163,7 +163,7 @@ text = "ADD"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Container/ScrollContainer/MarginContainer/Content" parent_id_path=PackedInt32Array(2075891554) index="4" unique_id=907793813]
 layout_mode = 2
-theme_override_constants/separation = 143
+theme_override_constants/separation = 100
 theme_override_styles/separator = SubResource("StyleBoxEmpty_xlqa3")
 
 [connection signal="mode_changed" from="VBoxContainer/Container/ScrollContainer/MarginContainer/Content/AppModeButton" to="." method="_on_app_mode_button_mode_changed"]

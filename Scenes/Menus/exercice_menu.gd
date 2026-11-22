@@ -41,7 +41,7 @@ func _on_exo_failure():
 	display_new_exercice()
 
 func disconnect_exo():
-	SaveLogic.data.add_exercice(current_exercice.exercice_name)
+	SaveLogic.add_exercice(current_exercice.exercice_name)
 	SaveLogic.save_data()
 	current_exercice.on_exercice_success.disconnect(_on_exo_success)
 	current_exercice.on_exercice_fail.disconnect(_on_exo_failure)

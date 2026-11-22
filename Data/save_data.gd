@@ -45,7 +45,7 @@ func get_relevant_card_among(cards:Array[int]) -> int:
 	var day = date["day"]
 	var month = date["month"]
 	var year = date["year"]
-	var possibles:Array[ElementData]
+	var possibles:Array[int]
 	
 	for c in cards:
 		var days_diff:int = 0

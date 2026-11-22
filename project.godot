@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.7", "Mobile")
 
 SaveLogic="*uid://dq1s4bktdsokg"
 PopupLogic="*uid://bdcblpxswwf8m"
+MainLibrary="*uid://blgctto4fml2x"
 
 [display]
 
