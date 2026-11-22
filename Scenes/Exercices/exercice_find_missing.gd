@@ -3,6 +3,9 @@ extends BaseExercice
 @onready var label_main_writing: Label = $VBoxContainer/Label_MainWriting
 @onready var label_clue: Label = $VBoxContainer/Label_Clue
 @onready var input_answer: LineEdit = $VBoxContainer/Input_Answer
+@onready var label_good_answer: Label = $ResultsParent/SuccessParent/Label_GoodAnswer
+@onready var label_wrong_answer: Label = $ResultsParent/FailureParent/Label_WrongAnswer
+@onready var bar_mastery: ProgressBar = $VBoxContainer/Bar_Mastery
 
 var expected_answer:String = ""
 
@@ -35,6 +38,9 @@ func setup_exercice():
 			expected_answer = card.translation
 		pass
 	
+	label_good_answer.text = expected_answer
+	label_wrong_answer.text = expected_answer
+	bar_mastery.value = card.mastery
 	super.setup_exercice()
 
 func _on_btn_validate_button_down() -> void:
