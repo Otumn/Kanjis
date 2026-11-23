@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://clcvmv40i2xnv"]
+
+[ext_resource type="Script" uid="uid://wut465x6pyk2" path="res://Scenes/UIComponents/pick_right_button.gd" id="1_8irx1"]
+
+[node name="PickRightButton" type="Control" unique_id=1592281112]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_8irx1")
+
+[node name="Btn_Answer" type="Button" parent="." unique_id=1809770139]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Btn_Answer" unique_id=246496354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Btn_Answer/MarginContainer" unique_id=611431430]
+layout_mode = 2
+alignment = 1
+
+[node name="Label_MainInfo" type="Label" parent="Btn_Answer/MarginContainer/VBoxContainer" unique_id=985915981]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "MainInfo"
+horizontal_alignment = 1
+
+[node name="Label_SecondaryInfo" type="Label" parent="Btn_Answer/MarginContainer/VBoxContainer" unique_id=999944761]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Kana
+Kunyomi
+Onyomi"
+horizontal_alignment = 1
+
+[connection signal="button_down" from="Btn_Answer" to="." method="_on_btn_answer_button_down"]
