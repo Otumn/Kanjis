@@ -15,32 +15,32 @@ var need_general_list_update: bool = false
 var need_word_list_update: bool = false
 var need_kanji_list_update: bool = false
 
-func get_new_card() -> int:
+func get_new_card(exclude:Array[int] = [-1], only_not_trained:bool = true) -> int:
 	if general_elements.is_empty() || need_general_list_update:
 		general_elements.clear()
 		for e in elements.size():
 			general_elements.append(e)
-	return get_relevant_card_among(general_elements)
+	return get_relevant_card_among(general_elements, exclude, only_not_trained)
 
-func get_new_word_card() -> int:
+func get_new_word_card(exclude:Array[int] = [-1], only_not_trained:bool = true) -> int:
 	if word_elements.is_empty() || need_word_list_update:
 		word_elements.clear()
 		for e in elements:
 			if e.is_word:
 				word_elements.append(e.id)
 		need_word_list_update = false
-	return get_relevant_card_among(word_elements)
+	return get_relevant_card_among(word_elements, exclude, only_not_trained)
 
-func get_new_kanji_card() -> int:
+func get_new_kanji_card(exclude:Array[int] = [-1], only_not_trained:bool = true) -> int:
 	if kanji_elements.is_empty() || need_kanji_list_update:
 		kanji_elements.clear()
 		for e in elements:
 			if !e.is_word:
 				kanji_elements.append(e.id)
 		need_kanji_list_update = false
-	return get_relevant_card_among(kanji_elements)
+	return get_relevant_card_among(kanji_elements, exclude, only_not_trained)
 
-func get_relevant_card_among(cards:Array[int]) -> int:
+func get_relevant_card_among(cards:Array[int], exclude:Array[int] = [-1], only_not_trained:bool = true) -> int:
 	var date = Time.get_datetime_dict_from_system()
 	var day = date["day"]
 	var month = date["month"]
@@ -51,7 +51,11 @@ func get_relevant_card_among(cards:Array[int]) -> int:
 		var days_diff:int = 0
 		var month_diff:int = 0
 		var year_diff:int = 0
-		if last_trained.has(c):
+		
+		if exclude.has(c):
+			continue
+		
+		if last_trained.has(c) && only_not_trained:
 			continue
 		
 		year_diff = abs(elements[c].last_seen_year - year)

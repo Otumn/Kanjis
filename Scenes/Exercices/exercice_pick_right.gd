@@ -25,13 +25,38 @@ func setup_exercice():
 	label_wrong_answer.text = card.base_writing
 	
 	var choice:int = randi() % 3
+	var bait:int = -1
 	match choice:
 		0:
 			pick_right_01.display_card(tested_card)
+			if card.is_word:
+				bait = SaveLogic.data.get_new_word_card([tested_card], false)
+				pick_right_02.display_card(bait)
+				pick_right_03.display_card(SaveLogic.data.get_new_word_card([tested_card, bait], false))
+			else:
+				bait = SaveLogic.data.get_new_kanji_card([tested_card], false)
+				pick_right_02.display_card(bait)
+				pick_right_03.display_card(SaveLogic.data.get_new_kanji_card([tested_card, bait], false))
 		1:
 			pick_right_02.display_card(tested_card)
+			if card.is_word:
+				bait = SaveLogic.data.get_new_word_card([tested_card], false)
+				pick_right_01.display_card(bait)
+				pick_right_03.display_card(SaveLogic.data.get_new_word_card([tested_card, bait], false))
+			else:
+				bait = SaveLogic.data.get_new_kanji_card([tested_card], false)
+				pick_right_01.display_card(bait)
+				pick_right_03.display_card(SaveLogic.data.get_new_kanji_card([tested_card, bait], false))
 		2:
 			pick_right_03.display_card(tested_card)
+			if card.is_word:
+				bait = SaveLogic.data.get_new_word_card([tested_card], false)
+				pick_right_02.display_card(bait)
+				pick_right_01.display_card(SaveLogic.data.get_new_word_card([tested_card, bait], false))
+			else:
+				bait = SaveLogic.data.get_new_kanji_card([tested_card], false)
+				pick_right_02.display_card(bait)
+				pick_right_01.display_card(SaveLogic.data.get_new_kanji_card([tested_card, bait], false))
 	
 	super.setup_exercice()
 
