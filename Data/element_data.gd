@@ -26,14 +26,20 @@ extends Resource
 
 func get_full_kunyomi() -> String:
 	var full:String = ""
-	for k in kunyomi:
-		full += k
-		full += ", "
+	for k in kunyomi.size():
+		full += kunyomi[k]
+		if k < kunyomi.size() - 1 : full += ","
 	return full
 
 func get_full_onyomi() -> String:
 	var full:String = ""
-	for o in onyomi:
-		full += o
-		full += ", "
+	for o in onyomi.size():
+		full += onyomi[o]
+		if o < onyomi.size() - 1 : full += ","
 	return full
+
+func get_sorted_clue() -> String:
+	if is_word:
+		return kanas
+	else:
+		return (get_full_kunyomi() + "\n" + get_full_onyomi())

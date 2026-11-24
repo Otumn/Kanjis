@@ -92,6 +92,7 @@ func add_trained_card(card_id:int):
 	data.elements[card_id].last_seen_day = date["day"]
 	data.elements[card_id].last_seen_month = date["month"]
 	data.elements[card_id].last_seen_year = date["year"]
+	print("trained : " + str(data.last_trained))
 
 func add_exercice(exo_name:String):
 	if data == null:

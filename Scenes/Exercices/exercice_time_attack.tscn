@@ -7,6 +7,12 @@
 
 [node name="ExerciceTimeAttack" unique_id=1928140774 instance=ExtResource("1_28gg5")]
 script = ExtResource("2_1olym")
+normal_view_time = 0.75
+normal_bait_number = 3.0
+normal_total_cycles = 3.0
+mastered_view_time = 0.5
+mastered_bait_numbers = 5.0
+mastered_total_cycles = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0" unique_id=1848586266]
 layout_mode = 1
@@ -21,7 +27,7 @@ layout_mode = 2
 theme_override_constants/separation = 80
 theme_override_styles/separator = SubResource("StyleBoxEmpty_28gg5")
 
-[node name="Label_Translation" type="Label" parent="VBoxContainer" index="1" unique_id=126349224]
+[node name="Label_BaseWriting" type="Label" parent="VBoxContainer" index="1" unique_id=126349224]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "GOAL"
@@ -36,4 +42,38 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_28gg5")
 custom_minimum_size = Vector2(0, 540)
 layout_mode = 2
 
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Btn_Answer" index="0" unique_id=418875276]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -143.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label_Clue" type="Label" parent="VBoxContainer/Btn_Answer/VBoxContainer" index="0" unique_id=1043359538]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "Kana
+Kunyomi
+Onyomi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Translation" type="Label" parent="VBoxContainer/Btn_Answer/VBoxContainer" index="1" unique_id=1267480672]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 32
+text = "Translation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ViewTimer" type="Timer" parent="." index="2" unique_id=635940144]
+one_shot = true
+
 [connection signal="button_down" from="VBoxContainer/Btn_Answer" to="." method="_on_btn_answer_button_down"]
+[connection signal="timeout" from="ViewTimer" to="." method="_on_view_timer_timeout"]

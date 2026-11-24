@@ -55,15 +55,13 @@ func get_relevant_card_among(cards:Array[int], exclude:Array[int] = [-1], only_n
 		if exclude.has(c):
 			continue
 		
-		if last_trained.has(c) && only_not_trained:
-			continue
-		
-		year_diff = abs(elements[c].last_seen_year - year)
-		if year_diff != 0: return c
-		month_diff = abs(elements[c].last_seen_month - month) * 30
-		if month_diff != 0: return c
-		days_diff = abs(elements[c].last_seen_day - day)
-		if days_diff > days_diff_limit: return c
+		if !last_trained.has(c) && only_not_trained:
+			year_diff = abs(elements[c].last_seen_year - year)
+			if year_diff != 0: return c
+			month_diff = abs(elements[c].last_seen_month - month) * 30
+			if month_diff != 0: return c
+			days_diff = abs(elements[c].last_seen_day - day)
+			if days_diff > days_diff_limit: return c
 		
 		if possibles.size() < 5: possibles.append(c)
 	if !possibles.is_empty():
