@@ -6,7 +6,10 @@ extends BaseExercice
 
 func setup_exercice():
 	
+	await RenderingServer.frame_post_draw
 	texture_answer.texture = viewport_answer.get_texture()
+	var test = texture_answer.get
+	test.save_png("res://test.png")
 	
 	super.setup_exercice()
 

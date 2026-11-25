@@ -2,10 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://bffavgiv7icx2" path="res://Scenes/Exercices/base_exercice.tscn" id="1_utl3s"]
 [ext_resource type="Script" uid="uid://18rscurfknw4" path="res://Scenes/Exercices/exercice_draw_kanji.gd" id="2_57ov8"]
-[ext_resource type="Texture2D" uid="uid://dfc4n3qre8306" path="res://Test.png" id="2_e64kc"]
 [ext_resource type="Texture2D" uid="uid://yqrlmlami6hp" path="res://Sprites/Icons/Icon_Arrow_Down.png" id="3_22ln0"]
+[ext_resource type="Shader" uid="uid://8c7adryp5v3v" path="res://Scenes/kanji_viewing.gdshader" id="3_unviv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_utl3s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hu7cb"]
+shader = ExtResource("3_unviv")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_unviv"]
+viewport_path = NodePath("SubViewportContainer/Viewport_Answer")
 
 [node name="ExerciceDrawKanji" unique_id=1928140774 instance=ExtResource("1_utl3s")]
 script = ExtResource("2_57ov8")
@@ -19,32 +25,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Viewport_Answer" type="SubViewport" parent="SubViewportContainer" index="0" unique_id=880896420]
 disable_3d = true
+handle_input_locally = false
 snap_2d_transforms_to_pixel = true
 canvas_item_default_texture_filter = 0
 gui_disable_input = true
-size = Vector2i(64, 64)
+size = Vector2i(128, 128)
 size_2d_override = Vector2i(64, 64)
 size_2d_override_stretch = true
-render_target_update_mode = 1
+render_target_update_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/Viewport_Answer" index="0" unique_id=470418605]
 custom_minimum_size = Vector2(64, 64)
 custom_maximum_size = Vector2(64, 64)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label_TargetKanji" type="Label" parent="SubViewportContainer/Viewport_Answer" index="1" unique_id=743564850]
-custom_minimum_size = Vector2(64, 64)
+custom_minimum_size = Vector2(128, 128)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
-text = "人"
+text = "鬱"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -90,8 +100,9 @@ theme_override_constants/margin_bottom = 6
 
 [node name="Texture_Answer" type="TextureRect" parent="VBoxContainer/MarginContainer" index="0" unique_id=1777619089]
 texture_filter = 1
+material = SubResource("ShaderMaterial_hu7cb")
 layout_mode = 2
-texture = ExtResource("2_e64kc")
+texture = SubResource("ViewportTexture_unviv")
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer" index="4" unique_id=1701115711]
 layout_mode = 2
